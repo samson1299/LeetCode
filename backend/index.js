@@ -385,7 +385,7 @@ const SUBMISSION = [];
 
 app.post('/signup', function (req, res) {
 
-    const { email, password } = req.body;
+    const { username, email, password,confirmPassword } = req.body;
 
     const userExists = USERS.find(user => user.email === email);
 
@@ -396,8 +396,10 @@ app.post('/signup', function (req, res) {
     }
 
     USERS.push({
+        username,
         email,
-        password
+        password,
+        confirmPassword
     });
 
     res.status(200).json({
@@ -409,7 +411,7 @@ app.post('/signup', function (req, res) {
 
 app.post('/signin', function (req, res) {
 
-    const { email, password } = req.body;
+    const {email,password } = req.body;
 
 
     const user = USERS.find(user => user.email === email);
