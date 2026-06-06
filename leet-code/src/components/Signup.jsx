@@ -17,12 +17,12 @@ const Signup = () => {
                     <img src={"leetcode.svg"} className="logo-sign" alt="leet code logo" />
                     <form action="">
 
-                        <input onChange={() => (e) => setUsername(e.target.value)} autoComplete="username" className="username" type="text" placeholder="Username" />
-                        <input onChange={() => (e) => setEmail(e.target.value)} autoComplete="email" className="username" type="text" placeholder="E-mail" />
+                        <input onChange={(e) => setUsername(e.target.value)} autoComplete="username" className="username" type="text" placeholder="Username" />
+                        <input onChange={(e) => setEmail(e.target.value)} autoComplete="email" className="username" type="text" placeholder="E-mail" />
 
-                        <input onChange={() => (e) => setPassword(e.target.value)} autoComplete="new-password" className="password" type="password" placeholder="Password"></input>
+                        <input onChange={(e) => setPassword(e.target.value)} autoComplete="new-password" className="password" type="password" placeholder="Password"></input>
 
-                        <input onChange={() => (e) => setConfirmPassword(e.target.value)} autoComplete="new-password" className="password" type="password" placeholder="Confirm Password"></input>
+                        <input onChange={(e) => setConfirmPassword(e.target.value)} autoComplete="new-password" className="password" type="password" placeholder="Confirm Password"></input>
 
 
                     </form>
@@ -43,7 +43,9 @@ const Signup = () => {
 
                                 })
                             })
-                            const data = await response.json();
+                            const json= await response.json();
+                            console.log(json);
+                            console.log(response.status)
                         } catch (err) {
                             console.log(err)
                         }

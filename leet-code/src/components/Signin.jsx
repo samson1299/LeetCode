@@ -31,8 +31,8 @@ const Signin = () => {
                                 "Content-Type": "application/json"
                             },
                             body: JSON.stringify({
-                                email: "test@gmail.com",
-                                password: "123"
+                                email,
+                                password
                             })
                         });
 
@@ -41,7 +41,7 @@ const Signin = () => {
 
                         if (response.ok) {
                             localStorage.setItem('token', json.token)
-                            navigate("/qestions")
+                            navigate("/questions")
                         }
 
                     }} className="signin-btn">Sign In</button>
