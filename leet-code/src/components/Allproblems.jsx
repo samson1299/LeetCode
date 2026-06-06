@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import { BrowserRouter, Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 const Allproblems = () => {
     const [problems, setProblems] = useState([]);
 
@@ -12,6 +13,13 @@ const Allproblems = () => {
                 console.log(err);
             })
     }, [])
+
+    const Problems = () =>{
+     const token = localStorage.getItem("token");
+     if(!token){
+        return <Navigate to="/siginin"/>
+     }
+    }
 
     return (
         <div>

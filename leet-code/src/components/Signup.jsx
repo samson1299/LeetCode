@@ -17,22 +17,22 @@ const Signup = () => {
                     <img src={"leetcode.svg"} className="logo-sign" alt="leet code logo" />
                     <form action="">
 
-                        <input autoComplete="username" className="username" type="text" placeholder="Username" />
-                        <input className="username" type="text" placeholder="E-mail" />
+                        <input onChange={() => (e) => setUsername(e.target.value)} autoComplete="username" className="username" type="text" placeholder="Username" />
+                        <input onChange={() => (e) => setEmail(e.target.value)} autoComplete="email" className="username" type="text" placeholder="E-mail" />
 
-                        <input autoComplete="new-password" className="password" type="password" placeholder="Password"></input>
+                        <input onChange={() => (e) => setPassword(e.target.value)} autoComplete="new-password" className="password" type="password" placeholder="Password"></input>
 
-                        <input autoComplete="new-password" className="password" type="password" placeholder="Confirm Password"></input>
+                        <input onChange={() => (e) => setConfirmPassword(e.target.value)} autoComplete="new-password" className="password" type="password" placeholder="Confirm Password"></input>
 
 
                     </form>
 
                     <button onClick={async () => {
                         try {
-                            const response = await fetch("https://localhost:3001/signup", {
+                            const response = await fetch("http://localhost:3001/signup", {
                                 method: "POST",
                                 headers: {
-                                    "ContentType": "application/json"
+                                    "Content-Type": "application/json"
                                 },
                                 body: JSON.stringify({
                                     username,
