@@ -4,11 +4,13 @@ import {
     FaGoogle,
     FaGithub,
 } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 const Signup = () => {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
+    const navigate = useNavigate();
     return (
         <div>
             <div className="login-container">
@@ -29,6 +31,7 @@ const Signup = () => {
 
                     <button onClick={async () => {
                         try {
+                           
                             const response = await fetch("http://localhost:3001/signup", {
                                 method: "POST",
                                 headers: {
@@ -42,13 +45,16 @@ const Signup = () => {
 
 
                                 })
-                            })
+                            });                          
                             const json= await response.json();
-                            console.log(json);
-                            console.log(response.status)
+                            if (response.ok){
+                                localStorage.setItem('token', json.token);
+                                navigate('/questions')
+                            }
                         } catch (err) {
                             console.log(err)
                         }
+                   
                     }} className="signin-btn">Sign In</button>
 
                     <p className="terms">

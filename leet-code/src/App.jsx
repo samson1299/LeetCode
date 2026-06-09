@@ -18,8 +18,8 @@ function Home() {
                     <a href="/">Premium</a>
                     <a href="/">Explore</a>
                     <a href="/">Product</a>
-                    <a href="/allproblems">Developer</a>
-                    <Link to='/Signin'>Sign in</Link>
+                    <a href="/">Developer</a>
+                    <Link to='/Signup'>Sign Up</Link>
                 </div>
             </nav>
             <section className="hero">
