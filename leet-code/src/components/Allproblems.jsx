@@ -22,7 +22,7 @@ const Allproblems = () => {
     }
 
     return (
-        <div>
+        <div className='root'>
             <div className="table-prb ">
                 <div>Problem</div>
                 <div>Acceptance</div>

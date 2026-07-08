@@ -175,6 +175,7 @@ function App() {
                 <Route path="/problems/:id" element={<Problems />} />
                 <Route path="/questions" element={<Allproblems/>} />
                 <Route path="/allproblems" element={<Allproblems/>}/>
+                <Route path="/theme" element={<theme/>}/>
             </Routes>
 
         </BrowserRouter>
