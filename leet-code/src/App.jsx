@@ -5,6 +5,7 @@ import Signin from "./components/Signin";
 import Signup from "./components/Signup";
 import Problems from "./components/Problems";
 import Allproblems from "./components/Allproblems";
+import { ThemeProvider } from "./components/theme";
 function Home() {
     return (
         <div className="page">
@@ -19,6 +20,7 @@ function Home() {
                     <a href="/">Explore</a>
                     <a href="/">Product</a>
                     <a href="/">Developer</a>
+                    <ThemeProvider/>
                     <Link to='/Signup'>Sign Up</Link>
                 </div>
             </nav>
