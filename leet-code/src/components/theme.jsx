@@ -23,6 +23,6 @@ export function ThemeProvider({ children }) {
     );
 }
 
-export function  theme useTheme(){
+export function useTheme(){
     return useContext(ThemeContext);
 }
