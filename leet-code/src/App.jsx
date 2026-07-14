@@ -6,7 +6,9 @@ import Signup from "./components/Signup";
 import Problems from "./components/Problems";
 import Allproblems from "./components/Allproblems";
 import { ThemeProvider } from "./components/theme";
+import { useTheme } from "./components/theme";
 function Home() {
+    const { darkMode, setDarkMode } = useTheme();
     return (
         <div className="page">
             <nav className="navbar">
@@ -20,7 +22,9 @@ function Home() {
                     <a href="/">Explore</a>
                     <a href="/">Product</a>
                     <a href="/">Developer</a>
-                    <ThemeProvider/>
+                    <button onClick={() => setDarkMode(!darkMode)}>
+                        {darkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+                    </button>
                     <Link to='/Signup'>Sign Up</Link>
                 </div>
             </nav>
@@ -164,24 +168,27 @@ function Home() {
             </footer>
         </div >
     );
-}
 
+}
 function App() {
     return (
-        <BrowserRouter>
+        <ThemeProvider>
+            <BrowserRouter>
 
-            <Routes>
-                <Route path="/" element={<Home/>} />
-                <Route path="/signin" element={<Signin />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/problems/:id" element={<Problems />} />
-                <Route path="/questions" element={<Allproblems/>} />
-                <Route path="/allproblems" element={<Allproblems/>}/>
-                <Route path="/theme" element={<theme/>}/>
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signin" element={<Signin />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/problems/:id" element={<Problems />} />
+                    <Route path="/questions" element={<Allproblems />} />
+                    <Route path="/allproblems" element={<Allproblems />} />
+                </Routes>
 
-        </BrowserRouter>
+            </BrowserRouter>
+        </ThemeProvider>
+
     );
 }
+
 
 export default App;
