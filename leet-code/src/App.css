@@ -705,13 +705,13 @@ body {
     justify-content: space-evenly;
     display: flex;
     font-size: 18px;
-    color: #262626;
+    color: #ffff;
     margin-top: 40px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
 }
 .problems h1{
     font-size: 25px;
-    color: #1a1a1a;
+    color: #ffff;
 }
 .editor-section {
     width: 60%;
@@ -721,7 +721,7 @@ body {
 }
 
 .code {
-    color: #1a1a1a;
+    color: #ffff;
     font-size: 60px;
     margin-bottom: 20px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -735,7 +735,7 @@ body {
     border: 1px solid #ccc;
     resize: none;
     box-sizing: border-box;
-    background-color: rgb(255 255 255);
+    background-color: rgb(18 18 18 / 0%);
 }
 
 
@@ -767,3 +767,79 @@ body {
     margin-top: 25px;
 }
 
+/* ================= DARK MODE ================= */
+
+.dark body {
+    background: #121212;
+    color: #fff;
+}
+
+.dark .page {
+    background: #121212;
+}
+
+.dark .navbar {
+    background: #1a1a1a;
+}
+
+.dark .hero {
+    background: linear-gradient(120deg, #181818 35%, #0d0d0d 65%);
+}
+
+.dark .hero-content h1,
+.dark .hero-content p,
+.dark .logo-text,
+.dark .nav-links a {
+    color: white;
+}
+
+.dark .dashboard-card {
+    background: #2b2b2b;
+}
+
+.dark .dashboard {
+    background: #1f1f1f;
+}
+
+.dark .chart-card,
+.dark .table-card,
+.dark .side-panel {
+    background: #2a2a2a;
+}
+
+.dark .row-line,
+.dark .side-line,
+.dark .chart-header,
+.dark .chart-footer {
+    background: #555;
+}
+
+.dark .explore-section {
+    background: #181818;
+    color: white;
+}
+
+.dark .explore-section h2,
+.dark .explore-section p {
+    color: white;
+}
+
+.dark .companies {
+    background: #101010;
+}
+
+.dark .companies h3,
+.dark .companies p,
+.dark .company-grid span {
+    color: white;
+}
+
+.dark .footer {
+    background: #181818;
+    border-top: 1px solid #333;
+}
+
+.dark .footer p,
+.dark .footer a {
+    color: white;
+}
